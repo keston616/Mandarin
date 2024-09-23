@@ -1,0 +1,9 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\airat\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\airat\\.nuget\\packages",
+      "D:\\VsKoren\\NuGetPackages"
+    ]
+  }
+}

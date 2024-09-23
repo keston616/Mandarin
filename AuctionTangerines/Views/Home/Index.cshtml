@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Mandarin>
+
+<h2>Мандаринки</h2>
+
+@foreach (var mandarin in Model)
+{
+    <div>
+        <img src="@mandarin.ImageUrl" alt="Mandarin" />
+        <p>Текущая цена: @mandarin.CurrentPrice</p>
+        <p>Конец аукциона: @mandarin.AuctionEndTime</p>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <form asp-action="Bid" method="post">
+                <input type="hidden" name="MandarinId" value="@mandarin.Id" />
+                <input type="number" name="Amount" required />
+                <button type="submit">Сделать ставку</button>
+            </form>
+        }
+        else
+        {
+            <p><a href="/Account/Login">Войдите</a>, чтобы сделать ставку.</p>
+        }
+    </div>
+}

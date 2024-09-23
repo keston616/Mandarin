@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <li><a asp-controller="Account" asp-action="Logout">Выйти</a></li>
+            }
+            else
+            {
+                <li><a asp-controller="Account" asp-action="Login">Вход</a></li>
+                <li><a asp-controller="Account" asp-action="Register">Регистрация</a></li>
+            }
+        </ul>
+    </nav>
+
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
